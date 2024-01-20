@@ -1037,7 +1037,7 @@ footer span a:hover{
 }
 /* daynight */
 .theme-toggle {
-  position: fixed;
+  position: absolute;
   top: 30px;
   right: 50px;
   background-color: #fff;
@@ -1068,12 +1068,6 @@ footer span a:hover{
   transform: rotate(180deg);
 }
 
-@media (max-width=947px) {
-  .dayNightBtn .theme-toggle{
-    z-index: 750;
-}
-}
-  
 body.dark {
   background-color: #111;
   color: #ddd;
