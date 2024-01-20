@@ -165,13 +165,20 @@ section .title::after{
 /* home section styling */
 .home{
     display: flex;
-    background: url("images/banner.jpg") no-repeat center;
+    background-image: url("images/banner.jpg"), url("/images/night-banner.jpg") no-repeat center;
     height: 100vh;
     color: #fff;
     min-height: 500px;
     background-size: cover;
     background-attachment: fixed;
     font-family: 'Ubuntu', sans-serif;
+}
+.home.day {
+  background-image: url("images/banner.jpg");
+}
+
+.home.night {
+  background-image: url("images/night-banner.jpg");
 }
 .home .max-width{
   width: 100%;
@@ -1028,11 +1035,6 @@ footer span a:hover{
         line-height: 38px;
     }
 }
-
-
-
-
-
 /* daynight */
 .theme-toggle {
   position: fixed;
@@ -1078,4 +1080,6 @@ body.dark .title::after {
   background-color: #111;
 }
 
-/* Add more styles for the dark theme here */
+
+
+

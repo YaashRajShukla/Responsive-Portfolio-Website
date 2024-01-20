@@ -99,5 +99,19 @@ themeToggle.addEventListener('click', () => {
   themeToggle.classList.toggle('active');
 });
 
+const home = document.querySelector('.home');
 
+//  day image
+home.classList.add('day');
 
+//  click event listener to the day/night button
+themeToggle.addEventListener('click', () => {
+  // Toggle the background image between the day and night images
+  if (home.classList.contains('day')) {
+    home.classList.remove('day');
+    home.classList.add('night');
+  } else {
+    home.classList.remove('night');
+    home.classList.add('day');
+  }
+});
