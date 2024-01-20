@@ -115,3 +115,10 @@ themeToggle.addEventListener('click', () => {
     home.classList.add('day');
   }
 });
+
+
+// Mail button functionality
+$('#mail').click(function(e){
+    var email= "yaash.shukla@gmail.com";
+    window.location.href="https://mail.google.com/mail/?view=cm&fs=1&to="+email;
+})
