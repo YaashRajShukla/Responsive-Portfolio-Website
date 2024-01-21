@@ -122,3 +122,21 @@ $('#mail').click(function(e){
     var email= "yaash.shukla@gmail.com";
     window.location.href="https://mail.google.com/mail/?view=cm&fs=1&to="+email;
 })
+
+// form 
+const scriptURL =' https://script.google.com/macros/s/AKfycbzL9TJ2ym8M1HilIl048LRfkvN7a_vyLnXTxBynRrqi5cS89GetjkA_H1Gz70P7ctVUKg/exec';
+const form = document.forms['submit-to-google-sheet']
+const msg = document.getElementById("msg")
+
+form.addEventListener('submit', e => {
+  e.preventDefault()
+  fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+    .then(response => {
+        msg.innerHTML = "Message sent successfully"
+        setTimeout(function(){
+            msg.innerHTML = ""
+        },5000)
+        form.reset()
+    })
+    .catch(error => console.error('Error!', error.message))
+})
