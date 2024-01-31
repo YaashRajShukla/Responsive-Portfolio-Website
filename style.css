@@ -165,13 +165,20 @@ section .title::after{
 /* home section styling */
 .home{
     display: flex;
-    background: url("images/banner.jpg") no-repeat center;
+    background-image: url("images/banner.jpg"), url("/images/night-banner.jpg") no-repeat center;
     height: 100vh;
     color: #fff;
     min-height: 500px;
     background-size: cover;
     background-attachment: fixed;
     font-family: 'Ubuntu', sans-serif;
+}
+.home.day {
+  background-image: url("images/banner.jpg");
+}
+
+.home.night {
+  background-image: url("images/night-banner.jpg");
 }
 .home .max-width{
   width: 100%;
@@ -212,6 +219,21 @@ section .title::after{
     color: crimson;
     background: none;
 }
+/* cv btn styling */
+.cvbtn{
+  display: inline-block;
+    background: crimson;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 8px 16px;
+    margin-top: 20px;
+    border-radius: 6px;
+    border: 2px solid crimson;
+    transition: all 0.3s ease;
+}
+
+
 
 /* about section styling */
 .about .title::after{
@@ -1028,16 +1050,11 @@ footer span a:hover{
         line-height: 38px;
     }
 }
-
-
-
-
-
 /* daynight */
 .theme-toggle {
-  position: fixed;
-  top: 20px;
-  right: 20px;
+  position: absolute;
+  top: 30px;
+  right: 50px;
   background-color: #fff;
   color: #333;
   border: none;
@@ -1065,6 +1082,7 @@ footer span a:hover{
 .theme-toggle.active i {
   transform: rotate(180deg);
 }
+
 body.dark {
   background-color: #111;
   color: #ddd;
@@ -1077,5 +1095,9 @@ body.dark .title::before {
 body.dark .title::after {
   background-color: #111;
 }
-
-/* Add more styles for the dark theme here */
+/* messgae  */
+#msg{
+  color: black;
+  margin-top: 1px;
+  display: block;
+}

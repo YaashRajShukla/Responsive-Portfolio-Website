@@ -99,5 +99,44 @@ themeToggle.addEventListener('click', () => {
   themeToggle.classList.toggle('active');
 });
 
+const home = document.querySelector('.home');
+
+//  day image
+home.classList.add('day');
+
+//  click event listener to the day/night button
+themeToggle.addEventListener('click', () => {
+  // Toggle the background image between the day and night images
+  if (home.classList.contains('day')) {
+    home.classList.remove('day');
+    home.classList.add('night');
+  } else {
+    home.classList.remove('night');
+    home.classList.add('day');
+  }
+});
 
 
+// Mail button functionality
+$('#mail').click(function(e){
+    var email= "yaash.shukla@gmail.com";
+    window.location.href="https://mail.google.com/mail/?view=cm&fs=1&to="+email;
+})
+
+// form 
+const scriptURL =' https://script.google.com/macros/s/AKfycbzL9TJ2ym8M1HilIl048LRfkvN7a_vyLnXTxBynRrqi5cS89GetjkA_H1Gz70P7ctVUKg/exec';
+const form = document.forms['submit-to-google-sheet']
+const msg = document.getElementById("msg")
+
+form.addEventListener('submit', e => {
+  e.preventDefault()
+  fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+    .then(response => {
+        msg.innerHTML = "Message sent successfully"
+        setTimeout(function(){
+            msg.innerHTML = ""
+        },5000)
+        form.reset()
+    })
+    .catch(error => console.error('Error!', error.message))
+})
